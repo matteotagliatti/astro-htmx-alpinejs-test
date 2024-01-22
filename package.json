@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.3.2",
+    "@types/alpinejs": "^3.13.6",
+    "alpinejs": "^3.13.4",
     "astro": "^4.2.1",
     "htmx.org": "^1.9.10"
   },

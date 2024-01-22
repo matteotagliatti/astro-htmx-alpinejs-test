@@ -8,6 +8,7 @@ try {
 }
 
 const count = fs.readFileSync("/tmp/count.txt", "utf-8");
+import Counter from "../components/Counter.astro";
 ---
 
 <html lang="en">
@@ -19,15 +20,36 @@ const count = fs.readFileSync("/tmp/count.txt", "utf-8");
     <title>Astro</title>
   </head>
   <body>
-    <h1>
-      Count: <span id="count">{count}</span>
-    </h1>
+    <section class="first">
+      <h1>
+        HTMX Count: <span id="count">{count}</span>
+      </h1>
 
-    <button hx-post="/api/increment" hx-target="#count"> Increment</button>
-    <button hx-post="/api/decrement" hx-target="#count"> Decrement</button>
+      <button hx-post="/api/increment" hx-target="#count"> Increment</button>
+      <button hx-post="/api/decrement" hx-target="#count"> Decrement</button>
+    </section>
+
+    <section>
+      <h1>AlpineJS</h1>
+      <!-- Note: no `client:load` necessary since AlpineJS is always included -->
+      <Counter>
+        <h1>Hello, AlpineJS!</h1>
+      </Counter>
+
+      <!-- Note: pass props to Astro components to initialize Alpine with a certain state -->
+      <Counter initialCount={5}>
+        <h2>Use Astro to pass in server-side props</h2>
+      </Counter>
+    </section>
   </body>
 </html>
 
 <script>
   import "htmx.org"; // import here to use in client only
 </script>
+
+<style>
+  .first {
+    margin-bottom: 10rem;
+  }
+</style>
