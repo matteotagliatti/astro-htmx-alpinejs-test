@@ -1,0 +1,9 @@
+---
+import fs from "node:fs";
+export const partial = true; // tells Astro this returns a simple “HTML fragment”, not a full page.
+
+const count = +fs.readFileSync("/tmp/count.txt", "utf-8").trim() + 1;
+fs.writeFileSync("/tmp/count.txt", count.toString());
+---
+
+{count}

@@ -1,0 +1,19 @@
+{
+  "name": "astro-htmx-alpinejs-test",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.2.1",
+    "htmx.org": "^1.9.10"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.5"
+  }
+}
